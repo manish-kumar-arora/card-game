@@ -5,35 +5,41 @@ import RowInput from './row_input';
 
 export default class App extends Component {
 
-    row1 = [];
-    row2 = [];
-    row3 = [];
+    row1 = [];//variable use to hold row1 elements
+    row2 = [];//variable use to hold row2 elements
+    row3 = [];//variable use to hold row3 elements
 
     constructor(props) {
         super(props);
 
+        //set default state for cards
         this.state = {
             cards: ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13', 'a14', 'a15', 'a16', 'a17', 'a18', 'a19', 'a20', 'a21']
         };
     }
 
+    //rearrange cards based on no of clicks and entered row no
     shuffleCards(rowNo, noOfClicks) {
-        var newCards = [];
+        var cards = [];
+        //shuffle cards if no of clicks less than 3
         if (noOfClicks < 3) {
             if (rowNo == 1) {
-                newCards = (this.row2).concat(this.row1).concat(this.row3);
+                cards = (this.row2).concat(this.row1).concat(this.row3);
             } else if (rowNo == 2) {
-                newCards = (this.row3).concat(this.row2).concat(this.row1);
+                cards = (this.row3).concat(this.row2).concat(this.row1);
             } else if (rowNo == 3) {
-                newCards = (this.row2).concat(this.row3).concat(this.row1);
+                cards = (this.row2).concat(this.row3).concat(this.row1);
             }
         } else {
-            newCards = this.goMagic(rowNo);
+            //fetch user card
+            cards = this.doMagic(rowNo);
         }
-        this.setState({ cards: newCards });
+        //set state for new set of cards
+        this.setState({cards});
     }
 
-    goMagic(rowNo) {
+    //return user chosed card based on row no
+    doMagic(rowNo) {
         if (rowNo == 1) {
             return [this.row1[3]];
         } else if (rowNo == 2) {
@@ -43,14 +49,15 @@ export default class App extends Component {
         }
     }
 
-
-
-    arrangeCards(rowNo) {
+    //set cards for given row
+    setCards(rowNo) {
+        //if no cards, just return
         if (this.state.cards.length == 0) {
             return;
         }
-        var rowData = [];
+        let rowData = [];
         let k = 0;
+        //set cards for row
         switch (rowNo) {
             case 1:
                 this.state.cards.map((x, index) => {
@@ -89,16 +96,18 @@ export default class App extends Component {
         return rowData;
     }
 
+    //reset cards to initial game
     resetGame() {
         this.setState({
             cards: ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13', 'a14', 'a15', 'a16', 'a17', 'a18', 'a19', 'a20', 'a21']
         });
     }
 
+    //render data
     render() {
-        this.row1 = this.arrangeCards(1);
-        this.row2 = this.arrangeCards(2);
-        this.row3 = this.arrangeCards(3);
+        this.row1 = this.setCards(1);
+        this.row2 = this.setCards(2);
+        this.row3 = this.setCards(3);
         return (
             <div>
                 <RowInput onResetClick={()=>this.resetGame()} onRowNoChange={(rowNo, noOfClicks)=>this.shuffleCards(rowNo, noOfClicks)} />
