@@ -8,7 +8,7 @@ const CardRow  = (props) => {
 	});
 
 	return (
-		<div>
+		<div className="text-center">
 			{items}
 		</div>
 		);

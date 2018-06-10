@@ -7,115 +7,100 @@
     width: 15%;
 }
 
-.video-item img {
-    max-width: 64px;
-}
-
-.video-detail .details {
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.list-group-item {
-    cursor: pointer;
-}
-
-.list-group-item:hover {
-    background-color: #eee;
-}
-
 img {
     margin: 10px;
-    width: 136px;
-    height: 206px;
+    width: 74px;
+    height: 98px;
 }
 
-button.m-l-10{
-	margin-left: 10px;
+button.m-l-10 {
+    margin-left: 10px;
+}
+
+.text-center{
+    text-align: center;
 }
 
 #a1 {
-    background: url(../images/../images/92890622.jpg) 0 0;
+    background: url(../images/cards.png) 0 0;
 }
 
 #a2 {
-    background: url(../images/92890622.jpg) 136px 0;
+    background: url(../images/cards.png) -73px 0;
 }
 
 #a3 {
-    background: url(../images/92890622.jpg) 296px 0;
+    background: url(../images/cards.png) -146px 0;
 }
 
 #a4 {
-    background: url(../images/92890622.jpg) 456px 0;
+    background: url(../images/cards.png) -219px 0;
 }
 
 #a5 {
-    background: url(../images/92890622.jpg) 614px 0;
+    background: url(../images/cards.png) -292px 0;
 }
 
 #a6 {
-    background: url(../images/92890622.jpg) 773px 0;
+    background: url(../images/cards.png) -365px 0;
 }
 
 #a7 {
-    background: url(../images/92890622.jpg) 933px 0;
+    background: url(../images/cards.png) -438px 0;
 }
 
 #a8 {
-    background: url(../images/92890622.jpg) 0 -257px;
+    background: url(../images/cards.png) 0 98px;
 }
 
 #a9 {
-    background: url(../images/92890622.jpg) 138px -257px;
+    background: url(../images/cards.png) -73px 98px;
 }
 
 #a10 {
-    background: url(../images/92890622.jpg) 296px -257px;
+    background: url(../images/cards.png) -146px 98px;
 }
 
 #a11 {
-    background: url(../images/92890622.jpg) 456px -257px;
+    background: url(../images/cards.png) -219px 98px;
 }
 
 #a12 {
-    background: url(../images/92890622.jpg) 614px -257px;
+    background: url(../images/cards.png) -292px 98px;
 }
 
 #a13 {
-    background: url(../images/92890622.jpg) 773px -257px;
+    background: url(../images/cards.png) -365px 98px;
 }
 
 #a14 {
-    background: url(../images/92890622.jpg) 933px -257px;
+    background: url(../images/cards.png) -438px 98px;
 }
 
 #a15 {
-    background: url(../images/92890622.jpg) 0 -514px;
+    background: url(../images/cards.png) 0 -98px;
 }
 
 #a16 {
-    background: url(../images/92890622.jpg) 138px -514px;
+    background: url(../images/cards.png) -73px -98px;
 }
 
 #a17 {
-    background: url(../images/92890622.jpg) 296px -514px;
+    background: url(../images/cards.png) -146px -98px;
 }
 
 #a18 {
-    background: url(../images/92890622.jpg) 456px -514px;
+    background: url(../images/cards.png) -219px -98px;
 }
 
 #a19 {
-    background: url(../images/92890622.jpg) 614px -514px;
+    background: url(../images/cards.png) -292px -98px;
 }
 
 #a20 {
-    background: url(../images/92890622.jpg) 773px -514px;
+    background: url(../images/cards.png) -365px -98px;
 }
 
 #a21 {
-    background: url(../images/92890622.jpg) 933px -514px;
+    background: url(../images/cards.png) -438px -98px;
 }
