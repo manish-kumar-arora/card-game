@@ -1,2 +1,2 @@
 # card-game
-A basic react app contains Magic card trcik
+A basic react app contains Card Magic Trick
