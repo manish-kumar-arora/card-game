@@ -52,7 +52,7 @@ class RowInput extends Component{
 			return;
 		}
 		//for row no between 1 to 3, call row change function from app js
-		if(this.state.rowNo>0){
+		if(this.state.rowNo==1 || this.state.rowNo==2 || this.state.rowNo==3){
 			this.setState({noOfClicks: ++this.state.noOfClicks});
 			this.props.onRowNoChange(this.state.rowNo, this.state.noOfClicks);		
 		}else{
