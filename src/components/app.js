@@ -12,10 +12,27 @@ export default class App extends Component {
     constructor(props) {
         super(props);
 
+        let cards = this.getRandomCards();
         //set default state for cards
-        this.state = {
-            cards: ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13', 'a14', 'a15', 'a16', 'a17', 'a18', 'a19', 'a20', 'a21']
-        };
+        this.state = {            
+            cards
+        };        
+    }
+
+    //get random 21 cards from full 52 cards
+    getRandomCards(){
+        let cards = [];
+        let cardIds = [];
+        let i= 21;
+        while(i!=0){
+            let randomNumber = Math.round(Math.random() * 100);
+            if(randomNumber>=1 && randomNumber<=52 && cardIds.indexOf(randomNumber)<0){
+                cards.push('a'+randomNumber);
+                cardIds.push(randomNumber);
+                i--;
+            }
+        }        
+        return cards;
     }
 
     //rearrange cards based on no of clicks and entered row no
@@ -56,51 +73,40 @@ export default class App extends Component {
             return;
         }
         let rowData = [];
-        let k = 0;
         //set cards for row
         switch (rowNo) {
             case 1:
-                this.state.cards.map((x, index) => {
-                    if (index == 3 * k) {
-                        rowData.push(x);
-                        k++;
-                    }
-                })
+                rowData = this.arrangeCards(0, rowData);
                 break;
             case 2:
-                this.state.cards.map((x, index) => {
-                    if (index == 3 * k + 1) {
-                        rowData.push(x);
-                        k++;
-                    }
-                })
+                rowData = this.arrangeCards(1, rowData);
                 break;
             case 3:
-                this.state.cards.map((x, index) => {
-                    if (index == 3 * k + 2) {
-                        rowData.push(x);
-                        k++;
-                    }
-                })
+                rowData = this.arrangeCards(2, rowData);
                 break;
             default:
-                this.state.cards.map((x, index) => {
-                    if (index == 3 * k) {
-                        rowData.push(x);
-                        k++;
-                    }
-                })
+                rowData = this.arrangeCards(0, rowData);
                 break;
-
         }
+        return rowData;
+    }
+
+    //arrange cards bared on index adder
+    arrangeCards(indexAdder, rowData){
+        let k = 0;
+        this.state.cards.map((x, index) => {
+            if (index == 3 * k + indexAdder) {
+                rowData.push(x);
+                k++;
+            }
+        });
         return rowData;
     }
 
     //reset cards to initial game
     resetGame() {
-        this.setState({
-            cards: ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13', 'a14', 'a15', 'a16', 'a17', 'a18', 'a19', 'a20', 'a21']
-        });
+        let cards = this.getRandomCards();
+        this.setState({cards});
     }
 
     //render data
